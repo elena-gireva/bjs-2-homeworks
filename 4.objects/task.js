@@ -10,8 +10,6 @@ let student5 = new Student("Jessica", "female", "20");
 Student.prototype.setSubject = function (subjectName) {
   this.subject = subjectName;
 }
-student3.setSubject("History");
-student5.setSubject("Math");
 
 Student.prototype.addMark = function (mark) {
   if(this.marks === undefined){ 
@@ -39,13 +37,14 @@ Student.prototype.getAverage = function () {
 }
 
 Student.prototype.exclude = function (reason) {
-  // if(this.excluded === undefined){ 
-    this.excluded = reason;
-  // } 
+  this.excluded = reason;
+
   delete this.marks;
   delete this.subject;
 }
 
+student3.setSubject("History");
+student5.setSubject("Math");
 student3.addMark(5);
 student3.addMark(3);
 student3.addMark(4);
